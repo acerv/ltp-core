@@ -2,7 +2,7 @@
 # Copyright (C) 2023 SUSE LLC Andrea Cervesato <andrea.cervesato@suse.com>
 
 project(
-    'ltp-root',
+    'ltp-core',
     'c',
     license : 'GPL-2.0+',
     version : '20230929',
