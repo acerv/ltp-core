@@ -30,7 +30,7 @@ endforeach
 ###########################
 # Headers
 ###########################
-config_dataeaders = [
+config_headers = [
     ['asm/ldt.h',            'HAVE_ASM_LDT_H'],
     ['asm/ptrace.h',         'HAVE_ASM_PTRACE_H'],
     ['cpuid.h',              'HAVE_CPUID_H'],
@@ -95,7 +95,7 @@ config_dataeaders = [
     ['xfs/xqm.h',            'HAVE_XFS_XQM_H'],
 ]
 
-foreach header: config_dataeaders
+foreach header: config_headers
     if compiler.has_header(header[0])
         config_data.set(header[1], '1')
     endif
