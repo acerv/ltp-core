@@ -12,7 +12,6 @@ ltp_sources += files([
     'safe_pthread.c',
     'safe_stdio.c',
     'self_exec.c',
-    'tlibio.c',
     'tst_af_alg.c',
     'tst_ansi_color.c',
     'tst_arch.c',
