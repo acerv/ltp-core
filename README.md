@@ -115,6 +115,8 @@ The following paragraph provides this information.
 
 # TODO
 
+- more documentation on tst_test features
+- more documentation on cross-compiling
 - CI configuration
 
 [LTP Project]: https://github.com/linux-test-project/ltp
