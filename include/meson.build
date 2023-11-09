@@ -567,13 +567,10 @@ ltp_sources += config_h
 res = run_command(['git', 'describe'], capture : true, check : false)
 
 if res.returncode() == 0
-    version = res.stdout()
+    version = res.stdout().strip()
 else
-    fs = import('fs')
-    version = fs.read(meson.source_root() + '/VERSION')
+    version = meson.project_version()
 endif
-
-version = version.strip()
 
 message('Version: ' + version)
 
