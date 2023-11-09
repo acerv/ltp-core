@@ -64,6 +64,10 @@ the LTP framework:
     # compile library
     meson compile
 
+    # compile static library
+    meson configure -Ddefault_library=static
+    meson compile
+
     # install library
     meson install
 
