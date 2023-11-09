@@ -36,21 +36,23 @@ static struct tst_test test = {
 
 Now we just need to compile and run:
 
-    gcc -lltp example.c -o example
+```sh
+gcc -lltp example.c -o example
 
-    ./example
-    ../lib/tst_test.c:1690: TINFO: LTP version: 20230929-148-g121b0e2ce
-    ../lib/tst_test.c:1576: TINFO: Timeout per run is 0h 00m 30s
-    example.c:6: TINFO: example setup
-    example.c:18: TPASS: example test passed
-    example.c:12: TINFO: example cleanup
+./example
+../lib/tst_test.c:1690: TINFO: LTP version: 20230929-148-g121b0e2ce
+../lib/tst_test.c:1576: TINFO: Timeout per run is 0h 00m 30s
+example.c:6: TINFO: example setup
+example.c:18: TPASS: example test passed
+example.c:12: TINFO: example cleanup
 
-    Summary:
-    passed   1
-    failed   0
-    broken   0
-    skipped  0
-    warnings 0
+Summary:
+passed   1
+failed   0
+broken   0
+skipped  0
+warnings 0
+```
 
 # How to build/install/test the framework
 
