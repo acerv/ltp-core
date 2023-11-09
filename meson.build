@@ -68,5 +68,7 @@ ltp_library = library(
     install_dir : 'lib',
 )
 
-subdir('lib/tests')
-subdir('lib/newlib_tests')
+if get_option('build-tests')
+    subdir('lib/tests')
+    subdir('lib/newlib_tests')
+endif
