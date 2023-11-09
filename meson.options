@@ -1,5 +1,5 @@
 option(
-    'build-tests',
+    'build_tests',
     type: 'boolean',
     value : false,
     description : 'build library tests'
