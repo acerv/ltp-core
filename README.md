@@ -1,5 +1,18 @@
 # Linux Test Project (core) Framework
 
+    # prepare build directory
+    meson setup builddir && cd builddir
+
+    # compile library
+    meson compile
+
+    # install library
+    meson install
+
+    # running library tests
+    meson configure -Dbuild-tests=true
+    meson test
+
 # Deprecated libraries
 
 - libipc
