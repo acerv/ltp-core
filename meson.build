@@ -11,6 +11,7 @@ project(
         'warning_level=2',
         'buildtype=debugoptimized',
     ],
+    meson_version: '>=1.2.3'
 )
 
 ###########################
