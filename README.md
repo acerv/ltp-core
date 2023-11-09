@@ -75,7 +75,7 @@ meson compile
 meson install
 
 # running library tests
-meson configure -Dbuild-tests=true
+meson configure -Dbuild_tests=true
 meson test
 ```
 

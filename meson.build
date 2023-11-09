@@ -69,7 +69,7 @@ ltp_library = library(
     install_dir : 'lib',
 )
 
-if get_option('build-tests')
+if get_option('build_tests')
     subdir('lib/tests')
     subdir('lib/newlib_tests')
 endif
