@@ -54,7 +54,9 @@ Now we just need to compile and run:
 
 # How to build/install/test the framework
 
-LTP framework is using 
+LTP framework is using [Meson](https://mesonbuild.com/) as the main build
+system. Following commands show how to use it in order to build/install/test
+the LTP framework:
 
     # prepare build directory
     meson setup builddir && cd builddir
