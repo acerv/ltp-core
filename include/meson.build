@@ -3,10 +3,6 @@
 
 subdir('lapi')
 
-ltp_sources += files([
-    'old/cleanup.c'
-])
-
 compiler = meson.get_compiler('c')
 config_data = configuration_data()
 
@@ -664,4 +660,9 @@ install_headers(
     'tst_uinput.h',
     'tst_wallclock.h',
     install_dir : 'include',
+)
+
+install_headers(
+    'old/cleanup.h',
+    install_dir : 'include/lapi'
 )

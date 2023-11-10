@@ -48,7 +48,7 @@ syscalls_h = ['''/************************************************
 #include <errno.h>
 #include <sys/syscall.h>
 #include <asm/unistd.h>
-#include "cleanup.c"
+#include "cleanup.h"
 
 #ifdef TST_TEST_H__
 #define TST_SYSCALL_BRK__(NR, SNR) ({ \\
