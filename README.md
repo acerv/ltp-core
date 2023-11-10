@@ -67,8 +67,8 @@ meson setup builddir && cd builddir
 # compile library
 meson compile
 
-# compile static library
-meson configure -Ddefault_library=static
+# compile shared library
+meson configure -Ddefault_library=shared
 meson compile
 
 # install library
