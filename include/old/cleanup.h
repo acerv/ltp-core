@@ -25,8 +25,8 @@
  *
  */
 
-#ifndef __CLEANUP_C__
-#define __CLEANUP_C__
+#ifndef __CLEANUP_H__
+#define __CLEANUP_H__
 
 /* Did the user define a cleanup function? */
 #ifndef CLEANUP
