@@ -71,5 +71,4 @@ ltp_library = library(
 
 if get_option('build_tests')
     subdir('lib/tests')
-    subdir('lib/newlib_tests')
 endif
