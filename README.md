@@ -125,6 +125,7 @@ The following paragraph provides this information.
 
 # TODO
 
+- remove old API
 - more documentation on tst_test features
 - more documentation on cross-compiling
 - CI configuration
