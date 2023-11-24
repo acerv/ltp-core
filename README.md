@@ -83,8 +83,6 @@ meson test
 
 Following paragraph shows available features in the LTP core framework.
 
-## Results macros
-
 ## Show messages
 
 Inside the framework we have many ways to send messages without stopping the
