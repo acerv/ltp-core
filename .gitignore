@@ -14,3 +14,4 @@
 *.orig
 *.eml
 builddir
+.venv
