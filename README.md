@@ -1,8 +1,10 @@
-# Linux Test Project (core) Framework
+# Linux Test Project (core)
 
-The LTP (core) framework aims to bring all the [LTP Project] cool features and
-to move them into a framework that can be used by any Linux project that is
-using C as main programming language.
+LTP is a lightweight and versatile testing framework based on [LTP library] and
+designed specifically for C applications on the Linux platform. With an emphasis
+on simplicity and ease of use, LTP provides developers with a powerful toolset
+for creating and executing test cases, both for Kernel and regular C
+applications.
 
 Here you can see a short example:
 
@@ -1099,4 +1101,4 @@ created with the previous LTP library.
 - more documentation on cross-compiling
 - CI configuration
 
-[LTP Project]: https://github.com/linux-test-project/ltp
+[LTP library]: https://github.com/linux-test-project/ltp
