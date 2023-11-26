@@ -6,7 +6,7 @@
 # -- Project information -----------------------------------------------------
 # https://www.sphinx-doc.org/en/master/usage/configuration.html#project-information
 
-project = 'Linux Test Project Framework'
+project = 'Linux Test Project (core)'
 copyright = '2023, Andrea Cervesato'
 author = 'Andrea Cervesato'
 release = '1.0'
