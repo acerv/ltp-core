@@ -10,27 +10,27 @@ Here you can see a short example:
 #include <tst_test.h>
 
 void setup(void) {
-    // your setup code goes here
+	// your setup code goes here
 
-    tst_res(TINFO, "example setup");
+	tst_res(TINFO, "example setup");
 }
 
 void cleanup(void) {
-    // your cleanup code goes here
+	// your cleanup code goes here
 
-    tst_res(TINFO, "example cleanup");
+	tst_res(TINFO, "example cleanup");
 }
 
 void run(void) {
-    // your test code goes here
+	// your test code goes here
 
 	tst_res(TPASS, "Doing hardly anything is easy");
 }
 
 static struct tst_test test = {
-    .test_all = run,
-    .setup = setup,
-    .cleanup = cleanup,
+	.test_all = run,
+	.setup = setup,
+	.cleanup = cleanup,
 };
 ```
 
@@ -107,7 +107,7 @@ static void run(void)
 	tst_res(TPASS, "This is a pass message");
 	tst_res(TFAIL, "This is a fail message");
 
-    // TERRNO can be used by all flags above
+	// TERRNO can be used by all flags above
 	tst_res(TINFO | TERRNO, "This is a message with errno at the end");
 }
 ```
@@ -124,7 +124,7 @@ When `TERRNO` is used in combination with `TBROK`, the framework will print
 ```c
 static void run(void)
 {
-    // if something is broken raise an error and stop the test
+	// if something is broken raise an error and stop the test
 
 	tst_brk(TBROK, "Something is broken. Stop the test.");
 	tst_brk(TBROK | TERRNO, "Something is broken. Print errno");
@@ -140,13 +140,13 @@ Test will immediately stop.
 ```c
 static void setup(void)
 {
-    // my requirements are not satisfied, so stop the test with message
+	// my requirements are not satisfied, so stop the test with message
 
 	tst_brk(TCONF, "Configuration problem. Stop the test.");
 }
 
 static struct tst_test test = {
-    .setup = setup,
+	.setup = setup,
 	.test_all = run,
 };
 ```
@@ -346,7 +346,7 @@ case, `TST_TEST_TCONF` macro can be used.
 
 static void run(void)
 {
-    // my test code
+	// my test code
 }
 
 static struct tst_test test = {
@@ -369,7 +369,7 @@ move inside it and to delete it once test is completed.
 ```c
 static struct tst_test test = {
 	.test_all = run,
-    .needs_tmpdir = 1,
+	.needs_tmpdir = 1,
 };
 ```
 
@@ -396,7 +396,7 @@ by the framework raising a `TBROK` error.
 ```c
 static struct tst_test test = {
 	.test_all = run,
-    // 1 hour max execution
+	// 1 hour max execution
 	.max_runtime = 3600,
 };
 ```
@@ -439,9 +439,9 @@ path the test device and default filesystem to be used.
 ```c
 static void run(void)
 {
-    tst_res(TINFO, "My device is %s", tst_device->dev);
+	tst_res(TINFO, "My device is %s", tst_device->dev);
 
-    // my test code using device
+	// my test code using device
 }
 
 static struct tst_test test = {
@@ -466,32 +466,31 @@ size in megabytes.
 ```c
 static void run(void)
 {
-    tst_res(TINFO,
-        "My device %s is formatted with %s filesystem",
-        tst_device->dev,
-        tst_device->fs_type);
+	tst_res(TINFO,
+		"My device %s is formatted with %s filesystem",
+		tst_device->dev,
+		tst_device->fs_type);
 
-    // my test code using tst_device
+	// my test code using tst_device
 }
 
 static struct tst_test test = {
 	.test_all = run,
-    .needs_device = 1,
-    .mount_device = 1,
-    .format_device = 1,
-    .dev_min_size = 2, // reserve 2MB device
-    .dev_fs_type = "xfs",
-    .mntpoint = "mntpoint",
-    .mnt_data = "usrquota",
-    .mnt_flags = MS_STRICTATIME,
+	.needs_device = 1,
+	.mount_device = 1,
+	.format_device = 1,
+	.dev_min_size = 2, // reserve 2MB device
+	.dev_fs_type = "xfs",
+	.mntpoint = "mntpoint",
+	.mnt_data = "usrquota",
+	.mnt_flags = MS_STRICTATIME,
 };
 ```
 
-> [!IMPORTANT]
-> Close all file descriptors (that point to files in test temporary
-> directory, even the unlinked ones) either in the 'test()' function
-> or in the test 'cleanup()' otherwise the test may break temporary
-> directory removal on NFS (look for "NFS silly rename").
+**IMPORTANT**: Close all file descriptors (that point to files in test temporary
+directory, even the unlinked ones) either in the 'test()' function or in the
+test 'cleanup()' otherwise the test may break temporary directory removal on NFS
+(look for "NFS silly rename").
 
 ### Overlay filesystem
 
@@ -500,11 +499,11 @@ If `.needs_overlay` is set, mount point will use an overlay fs.
 ```c
 static struct tst_test test = {
 	.test_all = run,
-    .needs_device = 1,
-    .mount_device = 1,
-    .format_device = 1,
-    .mntpoint = "mntpoint",
-    .needs_overlay = 1,
+	.needs_device = 1,
+	.mount_device = 1,
+	.format_device = 1,
+	.mntpoint = "mntpoint",
+	.needs_overlay = 1,
 };
 ```
 
@@ -516,11 +515,11 @@ one is supposed to be used for `EROFS` tests.
 ```c
 static struct tst_test test = {
 	.test_all = run,
-    .needs_device = 1,
-    .mount_device = 1,
-    .format_device = 1,
-    .mntpoint = "mntpoint",
-    .needs_rofs = 1,
+	.needs_device = 1,
+	.mount_device = 1,
+	.format_device = 1,
+	.mntpoint = "mntpoint",
+	.needs_rofs = 1,
 };
 ```
 
@@ -531,11 +530,11 @@ If `.needs_hugelbfs` is set, the hugetlbfs will be mounted at `.mntpoint`.
 ```c
 static struct tst_test test = {
 	.test_all = run,
-    .needs_device = 1,
-    .mount_device = 1,
-    .format_device = 1,
-    .mntpoint = "mntpoint",
-    .needs_hugelbfs = 1,
+	.needs_device = 1,
+	.mount_device = 1,
+	.format_device = 1,
+	.mntpoint = "mntpoint",
+	.needs_hugelbfs = 1,
 };
 ```
 
@@ -551,7 +550,7 @@ when only subset of the test is not applicable for a given filesystem.
 
 ```c
 static struct tst_test test = {
-    .test_all = run,
+	.test_all = run,
 	.all_filesystems = 1,
 	.skip_filesystems = (const char *const []) {
 			"exfat",
@@ -564,15 +563,15 @@ static struct tst_test test = {
 };
 ```
 
-> [!NOTE]
-> ext2, ext3 or ext4 in `.skip_filesystems` on tests which does *not* use
-> `.all_filesystems` needs to be defined as 'ext2/ext3/ext4'. The reason
-> is that it is hard to detect used filesystem due to overlapping the
-> functionality.
-> OTOH tests which use `.skip_filesystems` **with** `.all_filesystems` can skip
-> only filesystems which are actually used in `.all_filesystems`: ext2, ext3,
-> ext4, xfs, btrfs, vfat, exfat, ntfs, tmpfs (defined in `fs_type_whitelist[]`).
-> It does not make sense to list other filesystems.
+**NOTE** that ext2, ext3 or ext4 in `.skip_filesystems` on tests which does
+**not** use `.all_filesystems` needs to be defined as 'ext2/ext3/ext4'. The
+reason is that it is hard to detect used filesystem due to overlapping the
+functionality.
+
+OTOH tests which use `.skip_filesystems` **with** `.all_filesystems` can skip
+only filesystems which are actually used in `.all_filesystems`: ext2, ext3,
+ext4, xfs, btrfs, vfat, exfat, ntfs, tmpfs (defined in `fs_type_whitelist[]`).
+It does not make sense to list other filesystems.
 
 ## Minimum supported kernel
 
@@ -643,9 +642,9 @@ amount of free Swap use `.min_swap_avail`. Both flags are expressed in MB.
 ```c
 static struct tst_test test = {
 	.test_all = run,
-    // check that minimum memory is 20 MB
+	// check that minimum memory is 20 MB
 	.min_mem_avail = 20,
-    // check that minimum swap is 2 MB
+	// check that minimum swap is 2 MB
 	.min_swap_avail = 2,
 }
 ```
@@ -730,7 +729,7 @@ void run(void)
 
 static struct tst_test test = {
 	.test_all = run,
-    .tint_check = TST_TAINT_W | TST_TAINT_D,
+	.tint_check = TST_TAINT_W | TST_TAINT_D,
 }
 ```
 
@@ -879,7 +878,7 @@ is anything else but `bar`. If config variable is specified as plain
 
 ```c
 static struct tst_test test = {
-    .test_all = run,
+	.test_all = run,
 	.needs_kconfigs = (const char *[]) {
 		"CONFIG_VETH",
 		"CONFIG_USER_NS=y",
@@ -914,7 +913,7 @@ static struct timex *buf;
 
 static void run(void)
 {
-    // normally use buf as it is
+	// normally use buf as it is
 }
 
 static struct tst_test test = {
