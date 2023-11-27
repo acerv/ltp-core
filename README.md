@@ -56,6 +56,9 @@ skipped  0
 warnings 0
 ```
 
+Each test has some default options which are linked into the test. They can be
+seen with `./example -h` command.
+
 # How to build/install/test the framework
 
 LTP framework is using [Meson](https://mesonbuild.com/) as the main build
@@ -358,6 +361,22 @@ static struct tst_test test = {
 #else
 TST_TEST_TCONF("Test supported only on x86");
 #endif
+```
+
+## Customize test options
+
+Test options can be customized assigning `.options` argument to the `tst_test`
+struct definition.
+
+```c
+static struct tst_test test = {
+	.test_all = run,
+	.options = (struct tst_option[]) {
+		{"v", &verbose, "Verbose output"},
+		{"s", &size, "Size of the file to generate"},
+		{},
+	},
+};
 ```
 
 ## Run test inside a temporary folder
