@@ -427,14 +427,14 @@ static struct tst_test test = {
 Some tests require to spawn one or multiple children using `SAFE_FORK()` macro.
 The framework automatically handles spawned children inside the test, ensuring
 that all of them will be completed before the end of the test. This feature can
-be activated setting `.fork_child` flag.
+be activated setting `.forks_child` flag.
 When `SAFE_FORK()` is used, the framework will remind that the flag has to be
 set.
 
 ```c
 static struct tst_test test = {
 	.test_all = run,
-	.fork_child = 1,
+	.forks_child = 1,
 };
 ```
 
